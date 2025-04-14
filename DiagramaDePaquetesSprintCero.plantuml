@@ -1,0 +1,23 @@
+@startuml
+package "TFMGoSki" <<Folder>> {
+  
+  package "TFMGoSki.github" <<Folder>> {
+    package "TFMGoSki.github.workflows" <<Folder>> {
+    }
+  }
+
+  package "TFMGoSki.TFMGoSki" <<Folder>> {
+    package "TFMGoSki.TFMGoSki.Controllers" <<Folder>> {
+    }
+    package "TFMGoSki.TFMGoSki.Data" <<Folder>> {
+    }
+    package "TFMGoSki.TFMGoSki.Migrations" <<Folder>> {
+    }
+    package "TFMGoSki.TFMGoSki.Models" <<Folder>> {
+    }
+    package "TFMGoSki.TFMGoSki.Views" <<Folder>> {
+    }
+  }
+
+}
+@enduml
