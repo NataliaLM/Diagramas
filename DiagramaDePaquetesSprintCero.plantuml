@@ -1,23 +1,25 @@
 @startuml
-package "TFMGoSki" <<Folder>> {
-  
-  package "TFMGoSki.github" <<Folder>> {
-    package "TFMGoSki.github.workflows" <<Folder>> {
-    }
-  }
+package "tfm-back-front-end" <<Folder>> {
 
-  package "TFMGoSki.TFMGoSki" <<Folder>> {
-    package "TFMGoSki.TFMGoSki.Controllers" <<Folder>> {
+    package "tfm-back-front-end.TFMGoSki" <<Folder>> {   
+        package "tfm-back-front-end.TFMGoSki.github" <<Folder>> {
+            package "tfm-back-front-end.TFMGoSki.github.workflows" <<Folder>> {
+            }
+        }
+        package "tfm-back-front-end.TFMGoSki.TFMGoSki" <<Folder>> {
+            package "tfm-back-front-end.TFMGoSki.TFMGoSki.Controllers" <<Folder>> {
+            }
+            package "tfm-back-front-end.TFMGoSki.TFMGoSki.Data" <<Folder>> {
+            }
+            package "tfm-back-front-end.TFMGoSki.TFMGoSki.Migrations" <<Folder>> {
+            }
+            package "tfm-back-front-end.TFMGoSki.TFMGoSki.Models" <<Folder>> {
+            }
+            package "tfm-back-front-end.TFMGoSki.TFMGoSki.Views" <<Folder>> {
+            }
+        }
+        package "tfm-back-front-end.TFMGoSki.database" <<Folder>> {
+        }
     }
-    package "TFMGoSki.TFMGoSki.Data" <<Folder>> {
-    }
-    package "TFMGoSki.TFMGoSki.Migrations" <<Folder>> {
-    }
-    package "TFMGoSki.TFMGoSki.Models" <<Folder>> {
-    }
-    package "TFMGoSki.TFMGoSki.Views" <<Folder>> {
-    }
-  }
-
 }
 @enduml
