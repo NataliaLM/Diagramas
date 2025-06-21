@@ -1,0 +1,46 @@
+@startuml
+' Estilo para tablas
+!define table(x) class x << (T,#FFAAAA) >>
+!define primaryKey(x) <u>x</u>
+!define foreignKey(x) <i>x</i>
+
+' Tabla: City
+table(City) {
+    primaryKey(Id): INT
+    Name: NVARCHAR(100)
+}
+
+' Tabla: Instructor_TP
+table(Instructor_TP) {
+    primaryKey(Id): INT
+    Name: NVARCHAR(100)
+}
+
+' Tabla: Class
+table(Class) {
+    primaryKey(Id): INT
+    Name: NVARCHAR(100)
+    Price: DECIMAL(18,2)
+    StudentQuantity: INT
+    foreignKey(InstructorId): INT
+    ClassLevel: INT
+    foreignKey(CityId): INT
+}
+
+' Tabla: ReservationTimeRange (TPH base table)
+table(ReservationTimeRange) {
+    primaryKey(Id): INT
+    Discriminator: NVARCHAR
+    StartDateOnly: DATE
+    EndDateOnly: DATE
+    StartTimeOnly: TIME
+    EndTimeOnly: TIME
+    foreignKey(ClassId): INT
+    RemainingStudentsQuantity: INT
+}
+
+' Relaciones con cardinalidades 1:N
+City ||--o{ Class  
+Instructor_TP ||--o{ Class  
+Class ||--o{ ReservationTimeRange  
+@enduml

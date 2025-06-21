@@ -1,0 +1,37 @@
+@startuml
+package "Views" {
+
+    class CityView {
+        +Create()
+        +Edit()
+        +Delete()
+        +Details()
+        +Index()
+    }
+
+    class ClassView {
+        +Create()
+        +Edit()
+        +Delete()
+        +Details()
+        +Index()
+    }
+
+    class InstructorView {
+        +Create()
+        +Edit()
+        +Delete()
+        +Details()
+        +Index()
+    }
+
+    class ReservationTimeRangeClassView {
+        +Create()
+        +Edit()
+        +Delete()
+        +Details()
+        +Index()
+    }
+
+}
+@enduml

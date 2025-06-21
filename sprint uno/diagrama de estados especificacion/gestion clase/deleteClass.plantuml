@@ -1,0 +1,7 @@
+@startuml
+[*] --> UserChoosesDelete : User chooses to delete class
+UserChoosesDelete --> ConfirmDeletionPrompt : System asks for confirmation
+ConfirmDeletionPrompt --> ConfirmedDeletion : User confirms deletion
+ConfirmedDeletion --> DeleteClass : System deletes class
+DeleteClass --> [*]
+@enduml

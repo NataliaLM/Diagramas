@@ -1,0 +1,77 @@
+@startuml
+' Define estilos
+!define table(x) class x << (T,#FFAAAA) >>
+!define primaryKey(x) <u>x</u>
+!define foreignKey(x) <i>x</i>
+
+table(City) {
+  primaryKey(Id): INT
+  Name: NVARCHAR(100)
+}
+
+table(Instructor) {
+  primaryKey(Id): INT
+  Name: NVARCHAR(100)
+}
+
+table(Class) {
+  primaryKey(Id): INT
+  Name: NVARCHAR(100)
+  Price: DECIMAL(18,2)
+  StudentQuantity: INT
+  foreignKey(InstructorId): INT
+  ClassLevel: INT
+  foreignKey(CityId): INT
+}
+
+table(ReservationTimeRange) {
+  primaryKey(Id): INT
+  Discriminator: NVARCHAR
+  StartDateOnly: DATE
+  EndDateOnly: DATE
+  StartTimeOnly: TIME
+  EndTimeOnly: TIME
+}
+
+table(ReservationTimeRangeClass) {
+  primaryKey(Id): INT
+  foreignKey(ClassId): INT
+  RemainingStudentsQuantity: INT
+}
+
+table(ClassReservation) {
+  primaryKey(Id): INT
+  NumberPersonsBooked: INT
+  foreignKey(UserId): INT
+  foreignKey(ClassId): INT
+  foreignKey(ReservationTimeRangeClassId): INT
+}
+
+table(Comment) {
+  primaryKey(Id): INT
+  Discriminator: NVARCHAR
+  Text: NVARCHAR(100)
+  Rating: INT
+}
+
+table(ClassComment) {
+  primaryKey(Id): INT
+  foreignKey(ClassReservationId): INT
+}
+
+table(User) {
+  primaryKey(Id): INT
+  -- Otros campos --
+}
+
+' Relaciones
+City ||--o{ Class
+Instructor ||--o{ Class
+Class ||--o{ ReservationTimeRangeClass
+ReservationTimeRange <|-- ReservationTimeRangeClass
+User ||--o{ ClassReservation
+Class ||--o{ ClassReservation
+ReservationTimeRangeClass ||--o{ ClassReservation
+Comment <|-- ClassComment
+ClassReservation ||--o{ ClassComment
+@enduml

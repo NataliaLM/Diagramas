@@ -1,0 +1,15 @@
+@startuml
+actor User 
+left to right direction
+User --> (AddInstructor)
+User --> (ViewInstructorList)
+User --> (SelectInstructor)
+User --> (UpdateInstructor)
+User --> (DeleteInstructor)
+ 
+(AddInstructor) --> (ViewInstructorList) : <<extend>>  
+(SelectInstructor) --> (UpdateInstructor) : <<include>>
+(SelectInstructor) --> (DeleteInstructor) : <<include>>
+
+(ViewInstructorList) --> (SelectInstructor) : <<include>>
+@enduml

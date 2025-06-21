@@ -1,0 +1,52 @@
+@startuml
+' Class definitions
+ 
+enum ClassLevel {
+    Beginner
+    Intermediate
+    Advanced
+}
+
+enum Instructor {
+    Instructor1
+    Instructor2
+    Instructor3
+}
+
+enum City {
+    City1
+    City2
+    City3
+}
+ 
+class ReservationTimeRange { 
+    +Date 
+    +StartTime 
+    +EndTime 
+    +ReservationTimeRangeType 
+}
+ 
+class Class { 
+    +Name 
+    +Price 
+    +StudentQuantity 
+    +ClassLevel: ClassLevel
+    +Instructor: Instructor
+    +City: City
+}
+
+class ReservationTimeRangeClass { 
+    +RemainingStudentsQuantity 
+}
+ 
+' Relationships
+ 
+Class *-- "0..n" ReservationTimeRangeClass
+Instructor <-- Class
+ClassLevel <-- Class
+City <-- Class
+
+ReservationTimeRangeClass --|> ReservationTimeRange
+ 
+SnowGo *-- "0..n" Class
+@enduml

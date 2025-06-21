@@ -1,0 +1,61 @@
+@startuml
+
+package "Controllers" {
+    class CitiesController {
+        +Index()
+        +Details(id)
+        +Create()
+        +Create(viewModel)
+        +Edit(id)
+        +Edit(id, viewModel)
+        +Delete(id)
+        +DeleteConfirmed(id)
+    }
+
+    class ClassesController {
+        +Index(finalizadas)
+        +Details(id)
+        +Create()
+        +Create(model)
+        +Edit(id)
+        +Edit(id, model)
+        +Delete(id)
+        +DeleteConfirmed(id)
+    }
+
+    class InstructorsController {
+        +Index()
+        +Details(id)
+        +Create()
+        +Create(viewModel)
+        +Edit(id)
+        +Edit(id, viewModel)
+        +Delete(id)
+        +DeleteConfirmed(id)
+    }
+
+    class ReservationTimeRangeClassesController {
+        +Index()
+        +Details(id)
+        +Create()
+        +Create(model)
+        +Edit(id)
+        +Edit(id, model)
+        +Delete(id)
+        +DeleteConfirmed(id)
+    }
+}
+
+package "Services" {
+    interface ICityService
+    interface IClassService
+    interface IInstructorService
+    interface IReservationTimeRangeClassService
+}
+
+CitiesController --> ICityService
+ClassesController --> IClassService
+InstructorsController --> IInstructorService
+ReservationTimeRangeClassesController --> IReservationTimeRangeClassService
+
+@enduml

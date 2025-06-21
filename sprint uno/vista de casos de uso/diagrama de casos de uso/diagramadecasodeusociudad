@@ -1,0 +1,15 @@
+@startuml
+actor User 
+left to right direction
+User --> (AddCity)
+User --> (ViewCityList)
+User --> (SelectCity)
+User --> (UpdateCity)
+User --> (DeleteCity)
+ 
+(AddCity) --> (ViewCityList) : <<extend>>  
+(SelectCity) --> (UpdateCity) : <<include>>
+(SelectCity) --> (DeleteCity) : <<include>>
+
+(ViewCityList) --> (SelectCity) : <<include>>
+@enduml

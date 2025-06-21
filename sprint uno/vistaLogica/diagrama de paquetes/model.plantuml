@@ -1,0 +1,56 @@
+@startuml
+
+package Models {
+
+enum ClassLevel {
+    Beginner
+    Intermediate
+    Advanced
+}
+
+enum City {
+    +Id : int
+    +Name : string
+    +Update(name) : City
+}
+
+enum Instructor {
+    +Id : int
+    +Name : string
+    +Update(name) : Instructor
+}
+
+class Class {
+    +Id : int
+    +Name : string
+    +Price : decimal
+    +StudentQuantity : int
+    +ClassLevel : ClassLevel
+    +InstructorId : int
+    +CityId : int
+    +Update(...) : Class
+}
+
+class ReservationTimeRange {
+    +Id : int
+    +StartDateOnly : DateOnly
+    +EndDateOnly : DateOnly
+    +StartTimeOnly : TimeOnly
+    +EndTimeOnly : TimeOnly
+    +Update(...) : ReservationTimeRange
+}
+
+class ReservationTimeRangeClass {
+    +RemainingStudentsQuantity : int
+    +ClassId : int
+    +Update(...) : ReservationTimeRangeClass
+}
+
+ReservationTimeRangeClass --|> ReservationTimeRange
+Class --> ClassLevel
+Class --> City
+Class --> Instructor
+
+}
+
+@enduml

@@ -1,0 +1,44 @@
+@startuml
+[*] --> Initial
+
+Initial --> StateSelectManagement
+
+StateSelectManagement --> ClassManagement : Manage classes
+StateSelectManagement --> ClassLevelManagement : Manage classes levels
+StateSelectManagement --> InstructorManagement : Manage instructors
+StateSelectManagement --> CityManagement : Manage cities
+
+' Class Management
+Class_Opened --> ClassManagement : View available classes
+ClassManagement --> Class_Opened : Select class
+ClassManagement --> ClassManagement : Create class
+Class_Opened --> Class_Opened : Update class
+ClassManagement --> EndState : Close
+Class_Opened --> EndState : Close
+
+' Class Level Management
+ClassLevel_Opened --> ClassLevelManagement : View available classes levels
+ClassLevelManagement --> ClassLevel_Opened : Select class level
+ClassLevelManagement --> ClassLevelManagement : Create class level
+ClassLevel_Opened --> ClassLevel_Opened : Update class level
+ClassLevelManagement --> EndState : Close
+ClassLevel_Opened --> EndState : Close
+
+' Instructor Management
+Instructor_Opened --> InstructorManagement : View available instructors
+InstructorManagement --> Instructor_Opened : Select instructor
+InstructorManagement --> InstructorManagement : Create instructor
+Instructor_Opened --> Instructor_Opened : Update instructor
+InstructorManagement --> EndState : Close
+Instructor_Opened --> EndState : Close
+
+' City Management
+City_Opened --> CityManagement : View available cities
+CityManagement --> City_Opened : Select city
+CityManagement --> CityManagement : Create city
+City_Opened --> City_Opened : Update city
+CityManagement --> EndState : Close
+City_Opened --> EndState : Close
+
+EndState --> [*]
+@enduml

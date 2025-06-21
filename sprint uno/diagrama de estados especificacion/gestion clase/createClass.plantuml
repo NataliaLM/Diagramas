@@ -1,0 +1,11 @@
+@startuml
+
+    [*] --> RequestClassInfo : System requests class name, price
+    RequestClassInfo --> UserInputsClassInfo : User introduces class name, price
+    UserInputsClassInfo --> DisplayAdditionalOptions : System displays level, instructor, city
+    DisplayAdditionalOptions --> RequestAdditionalInfo : System requests level, instructor, city
+    RequestAdditionalInfo --> UserSelectsAdditionalInfo : User selects level, instructor, city
+    UserSelectsAdditionalInfo --> CreateClassEntry : System creates class with data
+    CreateClassEntry --> [*]
+
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+[*] --> ViewClassList : System shows level class list
+ViewClassList --> FilterByClasesDisponibles : User filter classes by clases disponibles
+ViewClassList --> FilterByClasesFinalizadas : User filter classes by clases finalizadas
+ViewClassList --> NoFilter : User uses No filter
+FilterByClasesDisponibles --> [*] : System shows class list
+FilterByClasesFinalizadas --> [*] : System shows class list
+NoFilter --> [*] : System shows class list
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+actor User 
+left to right direction
+User --> (AddClass)
+User --> (ViewClassList)
+User --> (SelectClass)
+User --> (UpdateClass)
+User --> (DeleteClass)
+ 
+(AddClass) --> (ViewClassList) : <<extend>>  
+(SelectClass) --> (UpdateClass) : <<include>>
+(SelectClass) --> (DeleteClass) : <<include>>
+
+(ViewClassList) --> (SelectClass) : <<include>>
+@enduml

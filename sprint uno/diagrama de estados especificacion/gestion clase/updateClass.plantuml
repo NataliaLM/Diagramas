@@ -1,0 +1,11 @@
+@startuml
+[*] --> ShowOriginalData : System shows original data to update
+
+ShowOriginalData --> RequestUpdatedDetails : System requests new class name, price, and student quantity
+RequestUpdatedDetails --> UserInputsBasicDetails : User fills class name, price, and student quantity
+UserInputsBasicDetails --> ListAdvancedOptions : System lists class level, instructor, and city to update
+ListAdvancedOptions --> RequestAdvancedDetails : System requests updated class level, instructor, and city
+RequestAdvancedDetails --> UserSelectsAdvancedDetails : User chooses updated class level, instructor, and city
+UserSelectsAdvancedDetails --> UpdateClass : System updates class with all new data
+UpdateClass --> [*]
+@enduml

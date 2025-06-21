@@ -1,0 +1,11 @@
+@startuml CreateClassReservation
+[*] --> InitialState
+
+InitialState --> InputClassDetails : User fills in remaining student quantity, class name, start date, end date, start time and end time
+InputClassDetails --> ValidateClassDetails : System validates inputs
+
+ValidateClassDetails --> FinalState : Valid
+ValidateClassDetails --> InitialState : Invalid (show error and restart)
+
+FinalState --> [*]
+@enduml
