@@ -1,0 +1,17 @@
+@startuml
+left to right direction
+
+actor Client
+
+Client --> (View All Comments)
+Client --> (View My Comments)
+Client --> (Create Comment)
+Client --> (Edit Comment)
+Client --> (Delete Comment)
+Client --> (View Comment Details)
+
+(Create Comment) --> (View Reservation Cart Details) : include
+(Create Comment) --> (Check for Existing Comment) : include
+
+(Edit Comment) --> (Validate Comment Exists) : include
+@enduml

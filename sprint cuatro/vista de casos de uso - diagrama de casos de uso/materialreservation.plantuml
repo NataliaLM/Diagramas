@@ -1,0 +1,20 @@
+@startuml
+left to right direction 
+
+actor "Client" as Client 
+ 
+  usecase "View my reservations" as UC1
+  usecase "View reservation details" as UC2
+  usecase "Create material reservation" as UC3
+  usecase "Edit material reservation" as UC4
+  usecase "Delete material reservation" as UC5
+  usecase "Check available schedules" as UC6 
+   
+Client --> UC1
+Client --> UC2
+Client --> UC3
+Client --> UC4
+Client --> UC5
+Client --> UC6
+ 
+@enduml

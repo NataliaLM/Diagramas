@@ -1,0 +1,18 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Worker" 
+  usecase "View list of reservation time ranges" as UC_Index
+  usecase "View details of a reservation time range" as UC_Details
+  usecase "Create a reservation time range" as UC_Create
+  usecase "Edit a reservation time range" as UC_Edit
+  usecase "Delete a reservation time range" as UC_Delete
+
+
+Worker --> UC_Index
+Worker --> UC_Details
+Worker --> UC_Create
+Worker --> UC_Edit
+Worker --> UC_Delete
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+left to right direction
+
+actor Worker
+
+Worker --> (View Material Type List)
+Worker --> (View Material Type Details)
+Worker --> (Create Material Type)
+(Create Material Type) --> (Validate Unique Name) : include
+
+Worker --> (Edit Material Type)
+(Edit Material Type) --> (Validate Unique Name) : include
+
+Worker --> (Delete Material Type)
+@enduml

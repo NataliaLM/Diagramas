@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+
+actor Client
+actor Worker
+
+Client --> (Browse Materials)
+Client --> (Filter Materials by Price, Size, Rating)
+Client --> (View Material Details)
+(View Material Details) --> (See Availability Periods) : include
+(View Material Details) --> (Read Comments and Ratings) : include
+
+Worker --> (View All Materials)
+Worker --> (Create Material)
+Worker --> (Edit Material)
+Worker --> (Delete Material)
+(Create Material) --> (Check for Duplicate Name) : include
+(Edit Material) --> (Check for Duplicate Name) : include
+@enduml

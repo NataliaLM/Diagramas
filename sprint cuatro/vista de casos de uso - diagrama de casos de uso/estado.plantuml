@@ -1,0 +1,15 @@
+@startuml
+left to right direction
+
+actor Worker
+
+Worker --> (View Material Status List)
+Worker --> (View Material Status Details)
+Worker --> (Create Material Status)
+(Create Material Status) --> (Validate Unique Name) : include
+
+Worker --> (Edit Material Status)
+(Edit Material Status) --> (Validate Unique Name) : include
+
+Worker --> (Delete Material Status)
+@enduml

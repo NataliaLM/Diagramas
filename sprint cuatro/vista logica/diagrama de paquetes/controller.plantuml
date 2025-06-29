@@ -1,0 +1,92 @@
+@startuml
+package "Material" {
+  class MaterialController {
+    +Index()
+    +Details(id)
+    +Create()
+    +Create(materialViewModel)
+    +Edit(id)
+    +Edit(id, materialViewModel)
+    +Delete(id)
+    +DeleteConfirmed(id)
+  }
+}
+
+package "Material Status" {
+  class MaterialStatusController {
+    +Index()
+    +Details(id)
+    +Create()
+    +Create(materialStatusViewModel)
+    +Edit(id)
+    +Edit(id, materialStatusViewModel)
+    +Delete(id)
+    +DeleteConfirmed(id)
+  }
+}
+
+package "Material Type" {
+  class MaterialTypeController {
+    +Index()
+    +Details(id)
+    +Create()
+    +Create(materialTypeViewModel)
+    +Edit(id)
+    +Edit(id, materialTypeViewModel)
+    +Delete(id)
+    +DeleteConfirmed(id)
+  }
+}
+
+package "Material Reservation" {
+  class MaterialReservationController {
+    +Index()
+    +Details(id)
+    +Create()
+    +Create(reservationViewModel)
+    +Edit(id)
+    +Edit(id, reservationViewModel)
+    +Delete(id)
+    +DeleteConfirmed(id)
+  }
+}
+
+package "Material Reservation Time Range" {
+  class ReservationTimeRangeMaterialsController {
+    +Index()
+    +Details(id)
+    +Create(materialId)
+    +Create(materialId, reservationTimeRangeMaterialViewModel)
+    +Edit(id)
+    +Edit(id, reservationTimeRangeMaterialViewModel)
+    +Delete(id)
+    +DeleteConfirmed(id)
+  }
+}
+
+package "Material Reservation Basket" {
+  class ReservationBasketController {
+    +Index()
+    +Details(id)
+    +Create()
+    +Create(basketViewModel)
+    +Edit(id)
+    +Edit(id, basketViewModel)
+    +Delete(id)
+    +DeleteConfirmed(id)
+  }
+}
+
+package "Material Comment" {
+  class MaterialCommentController {
+    +Index()
+    +Details(id)
+    +Create()
+    +Create(commentViewModel)
+    +Edit(id)
+    +Edit(id, commentViewModel)
+    +Delete(id)
+    +DeleteConfirmed(id)
+  }
+}
+@enduml

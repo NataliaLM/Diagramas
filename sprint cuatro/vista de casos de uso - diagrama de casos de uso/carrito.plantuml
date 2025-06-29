@@ -1,0 +1,16 @@
+@startuml
+left to right direction
+
+actor Client
+
+Client --> (Consultar sus carritos)
+Client --> (Ver detalles)
+Client --> (Crear reserva)
+Client --> (Editar reserva)
+Client --> (Eliminar reserva)
+
+(Editar reserva) --> (Consultar sus carritos) : <<extend>>
+(Eliminar reserva) --> (Consultar sus carritos) : <<extend>>
+(Ver detalles) --> (Consultar sus carritos) : <<extend>>
+
+@enduml

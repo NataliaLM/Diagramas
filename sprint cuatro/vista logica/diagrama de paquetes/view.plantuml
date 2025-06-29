@@ -1,0 +1,60 @@
+@startuml
+package "Views" {
+
+    class MaterialCommentView {
+        +Create()
+        +Edit()
+        +Delete()
+        +Details()
+        +Index()
+    }
+
+    class MaterialReservationView {
+        +Create()
+        +Edit()
+        +Delete()
+        +Details()
+        +Index()
+    }
+
+    class MaterialView {
+        +Create()
+        +Edit()
+        +Delete()
+        +Details()
+        +Index()
+    }
+
+    class MaterialStatusView {
+        +Create()
+        +Edit()
+        +Delete()
+        +Details()
+        +Index()
+    }
+
+    class MaterialTypeView {
+        +Create()
+        +Edit()
+        +Delete()
+        +Details()
+        +Index()
+    }
+
+    class ReservationMaterialCartView {
+        +Create()
+        +Edit()
+        +Delete()
+        +Details()
+        +Index()
+    }
+
+    class ReservationTimeRangeMaterialView {
+        +Create()
+        +Edit()
+        +Delete()
+        +Details()
+        +Index()
+    }
+}
+@enduml

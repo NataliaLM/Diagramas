@@ -1,0 +1,72 @@
+@startuml
+package "Models" {
+
+  class Material {
+    - int Id
+    - string Name
+    - string Description
+    - int QuantityMaterial
+    - decimal Price
+    - string Size
+    - int CityId
+    - int MaterialTypeId
+    - int MaterialStatusId
+    + Material(name, description, quantityMaterial, price, size, cityId, materialTypeId, materialStatusId)
+    + Update(name, description, quantityMaterial, price, size, cityId, materialTypeId, materialStatusId): Material
+  }
+
+  class MaterialStatus {
+    - int Id
+    - string Name
+    + MaterialStatus(name)
+    + Update(name): MaterialStatus
+  }
+
+  class MaterialType {
+    - int Id
+    - string Name
+    + MaterialType(name)
+    + Update(name): MaterialType
+  }
+
+  class MaterialComment {
+    - int ReservationMaterialCartId
+    - string Text
+    - int Raiting
+    + MaterialComment(reservationMaterialCartId, text, raiting)
+    + Update(reservationMaterialCartId, text, raiting): MaterialComment
+  }
+
+  class MaterialReservation {
+    - int Id
+    - int UserId
+    - decimal Total
+    - bool Paid
+    + MaterialReservation(userId, total, paid)
+    + UpdatePaid(paid): MaterialReservation
+  }
+
+  class ReservationMaterialCart {
+    - int Id
+    - int MaterialId
+    - int MaterialReservationId
+    - int UserId
+    - int ReservationTimeRangeMaterialId
+    - int NumberMaterialsBooked
+    + ReservationMaterialCart(materialId, materialReservationId, userId, reservationTimeRangeMaterialId, numberMaterialsBooked)
+    + Update(materialId, materialReservationId, userId, reservationTimeRangeMaterialId, numberMaterialsBooked): ReservationMaterialCart
+  }
+
+  class ReservationTimeRangeMaterial {
+    - int Id
+    - DateOnly StartDateOnly
+    - DateOnly EndDateOnly
+    - TimeOnly StartTimeOnly
+    - TimeOnly EndTimeOnly
+    - int RemainingMaterialsQuantity
+    - int MaterialId
+    + ReservationTimeRangeMaterial(startDateOnly, endDateOnly, startTimeOnly, endTimeOnly, remainingMaterialsQuantity, materialId)
+    + Update(startDateOnly, endDateOnly, startTimeOnly, endTimeOnly, remainingMaterialsQuantity, materialId): ReservationTimeRangeMaterial
+  }
+}
+@enduml
