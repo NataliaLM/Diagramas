@@ -1,0 +1,145 @@
+
+@startuml
+' ==== ENUMERACIONES ====
+
+enum ClassLevel {
+    Beginner
+    Intermediate
+    Advanced
+}
+
+' ==== CLASE BASE ====
+
+class User {
+    +UserName
+    +FullName
+    +Email
+    +PhoneNumber
+}
+
+class Client
+class Worker
+class Admin
+
+Client --|> User
+Worker --|> User
+Admin --|> User
+
+' ==== OTRAS CLASES ====
+
+class City {
+    +Name
+}
+
+class Material { 
+    +Name 
+    +Description 
+    +QuantityMaterial 
+    +Price 
+    +Size
+}
+
+class MaterialType {
+    +Name
+}
+
+class MaterialStatus {
+    +Name
+}
+
+class ReservationTimeRange { 
+    +StartDateOnly 
+    +EndDateOnly 
+    +StartTimeOnly 
+    +EndTimeOnly 
+}
+
+class ReservationTimeRangeMaterial { 
+    +RemainingMaterialsQuantity 
+}
+
+class MaterialReservation { 
+    +Total 
+    +Paid
+}
+
+class ReservationMaterialCart { 
+    +NumberMaterialsBooked
+}
+
+class Class { 
+    +Name 
+    +Price 
+    +StudentQuantity 
+    +ClassLevel 
+}
+
+class ClassReservation { 
+    +NumberPersonsBooked
+}
+
+class ReservationTimeRangeClass { 
+    +RemainingStudentsQuantity 
+}
+
+class Instructor {
+    +Name
+}
+
+class Comment { 
+    +Text 
+    +Rating 
+}
+
+class MaterialComment
+class ClassComment
+
+class SnowGo
+
+' ==== RELACIONES ====
+
+SnowGo *-- "0..n" Client
+SnowGo *-- "0..n" Worker
+SnowGo *-- "0..n" Admin
+SnowGo *-- "0..n" Material
+SnowGo *-- "0..n" Class
+
+Client *-- "0..n" MaterialReservation
+Client *-- "0..n" ClassReservation
+
+Worker *-- "0..n" Material
+Worker *-- "0..n" Class
+
+Admin *-- "0..n" Material
+Admin *-- "0..n" Class
+
+City *-- "0..n" Material
+
+MaterialType *-- "0..n" Material
+MaterialStatus *-- "0..n" Material
+
+Material *-- "0..n" ReservationMaterialCart
+ReservationMaterialCart *-- "0..n" ReservationTimeRangeMaterial
+MaterialReservation *-- "0..n" ReservationMaterialCart
+
+ReservationMaterialCart *-- User
+
+Material *-- "0..n" ReservationTimeRangeMaterial
+ReservationTimeRangeMaterial --|> ReservationTimeRange
+
+Class *-- "0..n" ReservationTimeRangeClass
+ReservationTimeRangeClass --|> ReservationTimeRange
+
+Class *-- "0..n" ClassReservation
+ClassReservation *-- ReservationTimeRangeClass
+
+Class *-- Instructor
+
+ClassLevel <-- Class
+
+ReservationMaterialCart *-- "0..n" MaterialComment
+ClassReservation *-- "0..n" ClassComment
+
+MaterialComment --|> Comment
+ClassComment --|> Comment
+@enduml
